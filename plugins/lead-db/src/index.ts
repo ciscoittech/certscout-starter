@@ -1,4 +1,4 @@
-import { Type } from "typebox";
+import { Type } from "@sinclair/typebox";
 import { defineToolPlugin } from "openclaw/plugin-sdk/tool-plugin";
 import { LeadDatabase } from "./database.js";
 import { resolve } from "path";

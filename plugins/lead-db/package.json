@@ -4,12 +4,12 @@
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "npx tsc",
     "dev": "tsc --watch"
   },
   "dependencies": {
     "better-sqlite3": "^11.0.0",
-    "typebox": "^0.34.0"
+    "@sinclair/typebox": "^0.34.0"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.0",

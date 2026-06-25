@@ -4,11 +4,11 @@
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "npx tsc",
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "typebox": "^0.34.0"
+    "@sinclair/typebox": "^0.34.0"
   },
   "devDependencies": {
     "typescript": "^5.7.0"
