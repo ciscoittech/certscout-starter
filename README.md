@@ -14,19 +14,26 @@ curl -fsSL https://openclaw.ai/install.sh | bash
 git clone https://github.com/ciscoittech/certscout-starter.git certscout
 cd certscout
 
-# 3. Install runtime dependencies (no build needed, plugins are pre-built)
-cd plugins/lead-db && npm install --production && cd ../..
+# 3. Link the config so OpenClaw can find it
+mkdir -p ~/.openclaw
+ln -sf $(pwd)/openclaw.json ~/.openclaw/openclaw.json
 
-# 4. Set up your environment
-echo "OPENROUTER_API_KEY=your-key-here" > .env
+# 4. Set your API key
+export OPENROUTER_API_KEY=your-key-here
 
-# 5. Start the gateway
+# 5. Install the plugins
+openclaw plugins install ./plugins/cert-scraper
+openclaw plugins install ./plugins/lead-db
+cd ~/.openclaw/extensions/lead-db && npm install --omit=dev && npm approve-scripts better-sqlite3 && cd ~/certscout
+
+# 6. Start the gateway
+openclaw config set gateway.mode local
 openclaw gateway
 ```
 
 Then type `find leads` and watch it work.
 
-Plugins are **pre-built** so you don't need TypeScript or a build step. Just install runtime dependencies and run.
+Plugins are **pre-built** so you don't need TypeScript or a build step. The `plugins install` command registers them with OpenClaw and the `export` sets your API key for the session.
 
 ## What's Inside
 
