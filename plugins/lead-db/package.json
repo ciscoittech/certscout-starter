@@ -15,10 +15,13 @@
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.0",
+    "@types/ws": "^8.18.1",
     "openclaw": "latest",
     "typescript": "^5.9.0"
   },
   "openclaw": {
-    "extensions": ["./dist/index.js"]
+    "extensions": [
+      "./dist/index.js"
+    ]
   }
 }

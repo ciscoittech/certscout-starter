@@ -1,5 +1,6 @@
 node_modules/
-dist/
 data/
 .env
 *.db
+# dist/ is NOT ignored — we ship pre-built plugins
+# so readers on 1GB VPSes don't need to compile TypeScript

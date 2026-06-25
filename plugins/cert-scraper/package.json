@@ -13,10 +13,13 @@
     "typebox": "^1.1.38"
   },
   "devDependencies": {
+    "@types/ws": "^8.18.1",
     "openclaw": "latest",
     "typescript": "^5.9.0"
   },
   "openclaw": {
-    "extensions": ["./dist/index.js"]
+    "extensions": [
+      "./dist/index.js"
+    ]
   }
 }

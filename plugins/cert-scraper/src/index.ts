@@ -57,8 +57,8 @@ export default defineToolPlugin({
           })
         ),
       }),
-      execute: async ({ states, org_type, months_until_expiry }, context) => {
-        const registryUrl = context?.config?.registryUrl || DEFAULT_URL;
+      execute: async ({ states, org_type, months_until_expiry }) => {
+        const registryUrl = process.env.REGISTRY_URL || DEFAULT_URL;
         const targetStates = states.includes("ALL") ? STATES : states;
         let allRecords: CertRecord[] = [];
 
@@ -92,8 +92,8 @@ export default defineToolPlugin({
           description: "State codes. Use ['ALL'] for national.",
         }),
       }),
-      execute: async ({ states }, context) => {
-        const registryUrl = context?.config?.registryUrl || DEFAULT_URL;
+      execute: async ({ states }) => {
+        const registryUrl = process.env.REGISTRY_URL || DEFAULT_URL;
         const targetStates = states.includes("ALL") ? STATES : states;
         let allRecords: CertRecord[] = [];
 
