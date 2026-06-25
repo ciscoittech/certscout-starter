@@ -1,0 +1,22 @@
+{
+  "id": "cert-scraper",
+  "name": "Certification Scraper",
+  "description": "Scrape public compliance audit directories for organizations with expiring certifications.",
+  "version": "1.0.0",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "registryUrl": {
+        "type": "string",
+        "description": "URL of the public certification registry CSV endpoint"
+      }
+    }
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "tools": ["scrape_certifications", "get_audit_stats"]
+  }
+}

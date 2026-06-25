@@ -1,0 +1,22 @@
+{
+  "id": "lead-db",
+  "name": "Lead Database",
+  "description": "Local lead storage with scoring, deduplication, and pipeline tracking.",
+  "version": "1.0.0",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "dbPath": {
+        "type": "string",
+        "default": "./data/leads.db"
+      }
+    }
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "tools": ["add_lead", "score_lead", "get_pipeline", "get_stats"]
+  }
+}
