@@ -1,18 +1,24 @@
 {
-  "name": "lead-db",
+  "name": "openclaw-plugin-lead-db",
   "version": "1.0.0",
   "type": "module",
-  "main": "dist/index.js",
+  "private": true,
   "scripts": {
-    "build": "npx tsc",
-    "dev": "tsc --watch"
+    "build": "tsc -p tsconfig.json"
+  },
+  "peerDependencies": {
+    "openclaw": ">=2026.5.17"
   },
   "dependencies": {
     "better-sqlite3": "^11.0.0",
-    "@sinclair/typebox": "^0.34.0"
+    "typebox": "^1.1.38"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.0",
-    "typescript": "^5.7.0"
+    "openclaw": "latest",
+    "typescript": "^5.9.0"
+  },
+  "openclaw": {
+    "extensions": ["./dist/index.js"]
   }
 }

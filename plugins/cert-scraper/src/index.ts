@@ -1,4 +1,4 @@
-import { Type } from "@sinclair/typebox";
+import { Type } from "typebox";
 import { defineToolPlugin } from "openclaw/plugin-sdk/tool-plugin";
 import { parseCertRegistryCsv, findExpiringCerts, type CertRecord } from "./csv-parser.js";
 
